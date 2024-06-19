@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { HealthDisplayHandlerService } from '../health-display-handler.service';
 
 @Component({
   selector: 'app-monster-health-bar',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './monster-health-bar.component.css'
 })
 export class MonsterHealthBarComponent {
-
+  displayPercentage : number;
+  constructor(@Inject(HealthDisplayHandlerService) HealthDisplayHandlerService : HealthDisplayHandlerService) {
+    this.displayPercentage = HealthDisplayHandlerService.monsterHealthPercentage;
+  }
 }
