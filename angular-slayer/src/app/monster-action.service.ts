@@ -13,7 +13,7 @@ export class MonsterActionService {
   attack() {
     let potency = this.gameHandlerService.defineDamage(8, 10);
     this.gameHandlerService.PlayerHealth = this.gameHandlerService.PlayerHealth - potency;
-    this.gameHandlerService.checkPlayerHealth;
+    this.gameHandlerService.checkPlayerHealth()
     this.healthDisplayService.updateHealthBarsDisplay();
   }
 }

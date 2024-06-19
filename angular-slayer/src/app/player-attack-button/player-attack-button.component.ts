@@ -17,7 +17,7 @@ export class PlayerAttackButtonComponent {
     console.log('attack');
     let potency = this.gameHandlerService.defineDamage(3, 10);
     this.gameHandlerService.MonsterHealth = this.gameHandlerService.MonsterHealth - potency;
-    this.gameHandlerService.checkMonsterHealth;
+    this.gameHandlerService.checkMonsterHealth();
     this.monsterActionService.attack();
   }
 }

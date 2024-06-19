@@ -59,7 +59,9 @@ export class GameHandlerService {
     if (this.monsterHealth <= 0) {
       alert("You've slain the monster :)")
       this.gameOver();
+      return true;
     }
+    return false;
   }
 
   gameOver() {
