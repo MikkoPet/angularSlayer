@@ -1,1 +1,1 @@
-<button [hidden] = hidden (click) = "startGame()" >START GAME</button>
+<button [hidden] = !gameHandlerService.gameOff (click) = "startGame()" >START GAME</button>

@@ -44,11 +44,12 @@ export class GameHandlerService {
   }
 
   resetGame() {
-    //sets all stats (playerHealth, monsterHealth, powerCharges) back to init values
+    this.PlayerHealth = 100;
+    this.monsterHealth = this.MonsterHealthMax;
   }
 
   gameOver() {
-    //display game over/game won message
+    this.gameOff = true;
   }
 
 }

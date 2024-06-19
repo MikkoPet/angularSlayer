@@ -9,11 +9,9 @@ import { GameHandlerService } from '../game-handler.service';
   styleUrl: './game-start-button.component.css'
 })
 export class GameStartButtonComponent {
-  hidden : boolean = false;
   gameHandlerService = inject(GameHandlerService);
 
   startGame() {
-    this.hidden = true;
     this.gameHandlerService.startGame();
   }
 }
