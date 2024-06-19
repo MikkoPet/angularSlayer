@@ -1,2 +1,3 @@
-<div [style.background] = "healthDisplayService.monsterBgGradInput">Monster's Health: {{ gameHandlerService.MonsterHealth }} </div>
-
+<div class="health-bar">
+    <div [style.width.%]="gameHandlerService.MonsterHealth" class="health-value">Monster's Health: {{ gameHandlerService.MonsterHealth }} </div>
+</div>
