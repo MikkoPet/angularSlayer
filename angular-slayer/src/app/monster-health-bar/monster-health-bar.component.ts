@@ -9,5 +9,5 @@ import { HealthDisplayHandlerService } from '../health-display-handler.service';
   styleUrl: './monster-health-bar.component.css'
 })
 export class MonsterHealthBarComponent {
-  healthDisplayServices = inject(HealthDisplayHandlerService)
+  healthDisplayService = inject(HealthDisplayHandlerService)
 }
