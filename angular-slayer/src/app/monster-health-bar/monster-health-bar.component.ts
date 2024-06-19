@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HealthDisplayHandlerService } from '../health-display-handler.service';
 
 @Component({
@@ -9,8 +9,5 @@ import { HealthDisplayHandlerService } from '../health-display-handler.service';
   styleUrl: './monster-health-bar.component.css'
 })
 export class MonsterHealthBarComponent {
-  displayPercentage : number;
-  constructor(@Inject(HealthDisplayHandlerService) HealthDisplayHandlerService : HealthDisplayHandlerService) {
-    this.displayPercentage = HealthDisplayHandlerService.monsterHealthPercentage;
-  }
+  healthDisplayServices = inject(HealthDisplayHandlerService)
 }

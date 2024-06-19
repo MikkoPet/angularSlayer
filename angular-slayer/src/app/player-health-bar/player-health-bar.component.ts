@@ -1,4 +1,4 @@
-import { Component, HostBinding, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GameHandlerService } from '../game-handler.service';
 
 @Component({
@@ -9,9 +9,5 @@ import { GameHandlerService } from '../game-handler.service';
   styleUrl: './player-health-bar.component.css',
 })
 export class PlayerHealthBarComponent {
-  displayPercentage : number;
-  constructor(@Inject(GameHandlerService) GameHandlerService : GameHandlerService) {
-    this.displayPercentage = GameHandlerService.PlayerHealth;
-  }
-
+  GameHandlerService = inject(GameHandlerService);
 }
