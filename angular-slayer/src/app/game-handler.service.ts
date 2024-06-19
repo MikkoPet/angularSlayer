@@ -8,6 +8,7 @@ export class GameHandlerService {
   private playerHealth : number = 100;
   private monsterHealth : number = 100;
   private monsterHealthMax : number = 100;
+  public gameOff : boolean = true;
 
   constructor() { }
 
@@ -38,7 +39,7 @@ export class GameHandlerService {
   
 
   startGame() {
-    //function to remove the start button and instead display attack buttons
+    this.gameOff = false;
     this.resetGame();
   }
 

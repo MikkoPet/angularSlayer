@@ -14,6 +14,6 @@ export class GameStartButtonComponent {
 
   startGame() {
     this.hidden = true;
-    this.gameHandlerService.resetGame();
+    this.gameHandlerService.startGame();
   }
 }

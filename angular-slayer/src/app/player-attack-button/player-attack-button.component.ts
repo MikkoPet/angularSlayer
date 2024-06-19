@@ -13,7 +13,6 @@ export class PlayerAttackButtonComponent {
   gameHandlerService = inject(GameHandlerService);
   monsterActionService = inject(MonsterActionService);
   
-
   attack() {
     console.log('attack');
     let potency = this.gameHandlerService.defineDamage(3, 10);
