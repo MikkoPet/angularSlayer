@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class GameHandlerService {
 
+  playerHealth : number = 100;
+  monsterHealth : number = 100;
+
   constructor() { }
 
   startGame() {
