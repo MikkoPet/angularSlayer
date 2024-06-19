@@ -6,11 +6,15 @@ import { PlayerAttackButtonComponent } from './player-attack-button/player-attac
 import { PlayerSpecialAttackButtonComponent } from './player-special-attack-button/player-special-attack-button.component';
 import { PlayerHealButtonComponent } from './player-heal-button/player-heal-button.component';
 import { PlayerFleeButtonComponent } from './player-flee-button/player-flee-button.component';
+import { GameHandlerService } from './game-handler.service';
+import { MonsterActionService } from './monster-action.service';
+import { GameStartButtonComponent } from './game-start-button/game-start-button.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PlayerHealthBarComponent, MonsterHealthBarComponent, PlayerAttackButtonComponent, PlayerSpecialAttackButtonComponent, PlayerHealButtonComponent, PlayerFleeButtonComponent],
+  imports: [RouterOutlet, PlayerHealthBarComponent, MonsterHealthBarComponent, PlayerAttackButtonComponent, PlayerSpecialAttackButtonComponent, PlayerHealButtonComponent, PlayerFleeButtonComponent, GameStartButtonComponent],
+  providers: [GameHandlerService, MonsterActionService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
