@@ -13,16 +13,18 @@ export class PlayerActionService {
 
 
   attack() {
-    //attack of monster
+    let potency = this.GameHandlerService.defineDamage(3, 10);
+    this.GameHandlerService.newMonsterHealth(this.GameHandlerService.MonsterHealth - potency);
     this.MonsterActionService.attack();
   }
   specialAttack() {
-    //specialAttack
+    let potency = this.GameHandlerService.defineDamage(10, 20);
+    this.GameHandlerService.newMonsterHealth(this.GameHandlerService.MonsterHealth - potency);
     this.MonsterActionService.attack();
   }
 
   heal() {
-    //heal
+    this.GameHandlerService.newPlayerHealth(this.GameHandlerService.PlayerHealth + 10);
     this.MonsterActionService.attack();
   }
 

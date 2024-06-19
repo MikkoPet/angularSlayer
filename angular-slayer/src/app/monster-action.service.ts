@@ -9,6 +9,8 @@ export class MonsterActionService {
   constructor(@Inject(GameHandlerService) private GameHandlerService: GameHandlerService) { };
 
   attack() {
-    //attack of monster
+    let potency = this.GameHandlerService.defineDamage(8, 15);
+    this.GameHandlerService.newPlayerHealth(this.GameHandlerService.PlayerHealth - potency);
+    GameHandlerService.roundOver();
   }
 }
