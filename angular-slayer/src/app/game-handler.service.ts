@@ -51,6 +51,7 @@ export class GameHandlerService {
   checkPlayerHealth() {
     if (this.playerHealth <= 0) {
       alert("You've been slain :(")
+      this.PlayerHealth = 0;
       this.gameOver()
     }
   }
@@ -59,6 +60,7 @@ export class GameHandlerService {
     if (this.monsterHealth <= 0) {
       alert("You've slain the monster :)")
       this.gameOver();
+      this.MonsterHealth = 0;
       return true;
     }
     return false;
