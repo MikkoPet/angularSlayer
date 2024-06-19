@@ -1,14 +1,41 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameHandlerService {
 
-  playerHealth : number = 100;
-  monsterHealth : number = 100;
+  private playerHealth : number = 100;
+  private monsterHealth : number = 100;
+  private monsterHealthMax : number = 100;
 
   constructor() { }
+
+  defineDamage(min : number, max : number){
+    return Math.floor((Math.random() * max) + min);
+  }
+
+  set newPlayerHealth(newPlayerHealth : any) {
+    this.playerHealth = newPlayerHealth;
+  }
+
+  get PlayerHealth() {
+    return this.playerHealth;
+  }
+
+  set newMonsterHealth(newMonsterHealth : any) {
+    this.monsterHealth = newMonsterHealth;
+  }
+
+  get MonsterHealth() {
+    return this.monsterHealth;
+  }
+
+  get MonsterHealthMax() {
+    return this.monsterHealthMax;
+  }
+
+  
 
   startGame() {
     //function to remove the start button and instead display attack buttons
@@ -22,4 +49,5 @@ export class GameHandlerService {
   gameOver() {
     //display game over/game won message
   }
+
 }

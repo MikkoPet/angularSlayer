@@ -7,9 +7,17 @@ import { GameHandlerService } from './game-handler.service';
 })
 export class HealthDisplayHandlerService {
 
-  constructor(@Inject(GameHandlerService) private GameHandlerService: GameHandlerService) { };
+  monsterHealthPercentage : number;
+
+  constructor(@Inject(GameHandlerService) private GameHandlerService: GameHandlerService) {
+    this.monsterHealthPercentage = Math.floor(( this.GameHandlerService.MonsterHealth * 100 ) / this.GameHandlerService.MonsterHealthMax);
+   };
 
   updateHealthBarsDisplay() {
-    //change value and percentage fill of health bars
+    this.monsterHealthPercentage = Math.floor(( this.GameHandlerService.MonsterHealth * 100 ) / this.GameHandlerService.MonsterHealthMax);
+  }
+
+  get MonsterHealthPercentage() {
+    return this.monsterHealthPercentage;
   }
 }
