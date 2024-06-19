@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { PlayerActionService } from '../player-action.service';
+import { Component, inject } from '@angular/core';
+import { GameHandlerService } from '../game-handler.service';
 
 @Component({
   selector: 'app-player-flee-button',
@@ -9,10 +9,10 @@ import { PlayerActionService } from '../player-action.service';
   styleUrl: './player-flee-button.component.css'
 })
 export class PlayerFleeButtonComponent {
-  constructor(@Inject(PlayerActionService) private PlayerActionService : PlayerActionService) {
-  }
+  gameHandlerService = inject(GameHandlerService);
 
   attack() {
-    this.PlayerActionService.flee;
+    alert("You flee...");
+    this.gameHandlerService.gameOver();
   }
 }

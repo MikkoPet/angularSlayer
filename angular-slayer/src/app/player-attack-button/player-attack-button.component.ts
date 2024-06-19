@@ -1,5 +1,6 @@
-import { Component, Inject } from '@angular/core';
-import { PlayerActionService } from '../player-action.service';
+import { Component, inject } from '@angular/core';
+import { GameHandlerService } from '../game-handler.service';
+import { MonsterActionService } from '../monster-action.service';
 
 @Component({
   selector: 'app-player-attack-button',
@@ -9,10 +10,14 @@ import { PlayerActionService } from '../player-action.service';
   styleUrl: './player-attack-button.component.css'
 })
 export class PlayerAttackButtonComponent {
-  constructor(@Inject(PlayerActionService) private PlayerActionService : PlayerActionService) {
-  }
+  gameHandlerService = inject(GameHandlerService);
+  monsterActionService = inject(MonsterActionService);
+  
 
   attack() {
-    this.PlayerActionService.attack;
+    console.log('attack');
+    let potency = this.gameHandlerService.defineDamage(3, 10);
+    this.gameHandlerService.MonsterHealth = this.gameHandlerService.MonsterHealth - potency;
+    this.monsterActionService.attack();
   }
 }

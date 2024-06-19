@@ -7,12 +7,13 @@ import { HealthDisplayHandlerService } from './health-display-handler.service';
 })
 export class MonsterActionService {
 
-  constructor(@Inject(GameHandlerService) private GameHandlerService: GameHandlerService,
-              @Inject(HealthDisplayHandlerService) private HealthDisplayHandlerService : HealthDisplayHandlerService) { };
+  constructor(public GameHandlerService: GameHandlerService,
+              public HealthDisplayHandlerService : HealthDisplayHandlerService) { };
 
   attack() {
     let potency = this.GameHandlerService.defineDamage(8, 15);
-    this.GameHandlerService.newPlayerHealth(this.GameHandlerService.PlayerHealth - potency);
+    this.GameHandlerService.PlayerHealth = this.GameHandlerService.PlayerHealth - potency;
+
     this.HealthDisplayHandlerService.updateHealthBarsDisplay();
   }
 }

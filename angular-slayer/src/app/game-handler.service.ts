@@ -15,7 +15,7 @@ export class GameHandlerService {
     return Math.floor((Math.random() * max) + min);
   }
 
-  set newPlayerHealth(newPlayerHealth : any) {
+  set PlayerHealth(newPlayerHealth : any) {
     this.playerHealth = newPlayerHealth;
   }
 
@@ -23,7 +23,7 @@ export class GameHandlerService {
     return this.playerHealth;
   }
 
-  set newMonsterHealth(newMonsterHealth : any) {
+  set MonsterHealth(newMonsterHealth : any) {
     this.monsterHealth = newMonsterHealth;
   }
 
