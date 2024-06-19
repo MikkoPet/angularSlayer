@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { GameHandlerService } from './game-handler.service';
 import { HealthDisplayHandlerService } from './health-display-handler.service';
 
@@ -7,13 +7,13 @@ import { HealthDisplayHandlerService } from './health-display-handler.service';
 })
 export class MonsterActionService {
 
-  constructor(public GameHandlerService: GameHandlerService,
-              public HealthDisplayHandlerService : HealthDisplayHandlerService) { };
+  gameHandlerService = inject(GameHandlerService);
+  healthDisplayService = inject(HealthDisplayHandlerService);
 
   attack() {
-    let potency = this.GameHandlerService.defineDamage(8, 10);
-    this.GameHandlerService.PlayerHealth = this.GameHandlerService.PlayerHealth - potency;
-
-    this.HealthDisplayHandlerService.updateHealthBarsDisplay();
+    let potency = this.gameHandlerService.defineDamage(8, 10);
+    this.gameHandlerService.PlayerHealth = this.gameHandlerService.PlayerHealth - potency;
+    this.gameHandlerService.checkPlayerHealth;
+    this.healthDisplayService.updateHealthBarsDisplay();
   }
 }

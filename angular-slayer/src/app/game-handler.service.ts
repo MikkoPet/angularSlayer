@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -48,8 +48,23 @@ export class GameHandlerService {
     this.monsterHealth = this.MonsterHealthMax;
   }
 
+  checkPlayerHealth() {
+    if (this.playerHealth <= 0) {
+      alert("You've been slain :(")
+      this.gameOver()
+    }
+  }
+
+  checkMonsterHealth() {
+    if (this.monsterHealth <= 0) {
+      alert("You've slain the monster :)")
+      this.gameOver();
+    }
+  }
+
   gameOver() {
     this.gameOff = true;
+    return;
   }
 
 }
