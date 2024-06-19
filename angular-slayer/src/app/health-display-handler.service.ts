@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-import { Inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { GameHandlerService } from './game-handler.service';
 
 @Injectable({
@@ -7,14 +6,12 @@ import { GameHandlerService } from './game-handler.service';
 })
 export class HealthDisplayHandlerService {
 
-  monsterHealthPercentage : number;
-
-  constructor(@Inject(GameHandlerService) private GameHandlerService: GameHandlerService) {
-    this.monsterHealthPercentage = Math.floor(( this.GameHandlerService.MonsterHealth * 100 ) / this.GameHandlerService.MonsterHealthMax);
-   };
+  monsterHealthPercentage : number = 100;
+  gameHandlerService = inject(GameHandlerService);
+  
 
   updateHealthBarsDisplay() {
-    this.monsterHealthPercentage = Math.floor(( this.GameHandlerService.MonsterHealth * 100 ) / this.GameHandlerService.MonsterHealthMax);
+    this.monsterHealthPercentage = Math.floor(( this.gameHandlerService.MonsterHealth * 100 ) / this.gameHandlerService.MonsterHealthMax);
   }
 
   get MonsterHealthPercentage() {

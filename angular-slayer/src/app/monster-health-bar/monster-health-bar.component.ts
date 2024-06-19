@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HealthDisplayHandlerService } from '../health-display-handler.service';
+import { GameHandlerService } from '../game-handler.service';
 
 @Component({
   selector: 'app-monster-health-bar',
@@ -9,5 +10,6 @@ import { HealthDisplayHandlerService } from '../health-display-handler.service';
   styleUrl: './monster-health-bar.component.css'
 })
 export class MonsterHealthBarComponent {
-  healthDisplayService = inject(HealthDisplayHandlerService)
+  healthDisplayService = inject(HealthDisplayHandlerService);
+  gameHandlerService = inject(GameHandlerService);
 }
