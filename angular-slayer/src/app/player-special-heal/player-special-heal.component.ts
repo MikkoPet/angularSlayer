@@ -17,6 +17,9 @@ export class PlayerSpecialHealComponent {
   
     attack() {
       this.gameHandlerService.PlayerHealth += 50;
+      if (this.gameHandlerService.PlayerHealth > 100) {
+        this.gameHandlerService.PlayerHealth = 100
+      }
       this.gameHandlerService.consumeCharges();
       this.monsterActionService.attack();
     }
