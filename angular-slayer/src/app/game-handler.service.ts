@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { GameLogsService } from './game-logs.service';
-import { PlayerDataComponent } from './player-data/player-data.component';
-import { MonsterDataComponent } from './monster-data/monster-data.component';
+import { MonsterDataService } from './monster-data.service';
+import { PlayerDataService } from './player-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class GameHandlerService {
   public gameOff : boolean = true;
 
   gameLogs = inject(GameLogsService);
-  player = inject(PlayerDataComponent);
-  monster = inject(MonsterDataComponent);
+  monster = inject(MonsterDataService);
+  player = inject(PlayerDataService);
 
   constructor() { }
 

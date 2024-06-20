@@ -7,7 +7,7 @@ export class MonsterDataService {
   private monsterHealth : number = 100;
   private monsterHealthMax : number = 100;
 
-  set MonsterHealth(newMonsterHealth : any) {
+  set MonsterHealth(newMonsterHealth : number) {
     this.monsterHealth = newMonsterHealth;
   }
 

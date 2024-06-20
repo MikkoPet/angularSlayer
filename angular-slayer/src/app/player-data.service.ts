@@ -7,7 +7,7 @@ export class PlayerDataService {
   private playerHealth : number = 100;
   private charges : number = 0;
 
-  set PlayerHealth(newPlayerHealth : any) {
+  set PlayerHealth(newPlayerHealth : number) {
     this.playerHealth = newPlayerHealth;
   }
 
