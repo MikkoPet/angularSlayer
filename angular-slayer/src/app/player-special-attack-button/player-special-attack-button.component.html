@@ -1,1 +1,1 @@
-<button (click)="attack()" [hidden] = gameHandlerService.gameOff >BIG ATTACK</button>
+<button (click)="attack()" [hidden] = gameHandlerService.gameOff [ngClass]="charges ? 'specialAttackButtonActive' : 'specialAttackButton'" >BIG ATTACK</button>

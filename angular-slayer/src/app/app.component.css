@@ -1,0 +1,12 @@
+h1 {
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
