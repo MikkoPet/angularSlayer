@@ -10,6 +10,7 @@ import { GameHandlerService } from './game-handler.service';
 import { MonsterActionService } from './monster-action.service';
 import { GameStartButtonComponent } from './game-start-button/game-start-button.component';
 import { PlayerSpecialHealComponent } from './player-special-heal/player-special-heal.component';
+import { LogDisplayComponent } from './log-display/log-display.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { PlayerSpecialHealComponent } from './player-special-heal/player-special
             PlayerHealButtonComponent, 
             PlayerFleeButtonComponent, 
             PlayerSpecialHealComponent,
-            GameStartButtonComponent],
+            GameStartButtonComponent,
+            LogDisplayComponent],
   providers: [GameHandlerService, MonsterActionService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

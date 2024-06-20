@@ -1,0 +1,5 @@
+<section class="logs">
+    <ul>
+        <li *ngFor="let log of logs.logsArr" [ngClass]="log[0]==='Y' || log[0]==='U' ? 'playerLog' : 'monsterLog'"> {{log}} </li>
+    </ul>
+</section>
