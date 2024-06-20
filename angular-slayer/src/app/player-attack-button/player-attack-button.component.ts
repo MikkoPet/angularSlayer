@@ -20,7 +20,6 @@ export class PlayerAttackButtonComponent {
   logs = inject(GameLogsService);
   
   attack() {
-    console.log('attack');
     let potency = this.gameHandlerService.defineDamage(3, 10);
     this.monster.MonsterHealth = this.monster.MonsterHealth - potency;
     this.player.plusCharge();
