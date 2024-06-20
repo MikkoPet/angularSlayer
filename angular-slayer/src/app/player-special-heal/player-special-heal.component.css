@@ -1,0 +1,18 @@
+.specialHealButton {
+    background-color: rgb(187, 188, 190);
+    color: grey;
+    transition: all 100ms ease-in;
+    pointer-events: none;
+}
+
+.specialHealButtonActive {
+    background-color: rgb(138, 185, 255);
+    color: rgb(226, 238, 255);
+    transition: all 100ms ease-in;
+    pointer-events: auto;
+}
+
+.specialHealButtonActive:hover {
+    background-color: rgb(51, 110, 199);
+    color: white;
+}

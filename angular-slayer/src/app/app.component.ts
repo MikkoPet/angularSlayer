@@ -13,7 +13,15 @@ import { GameStartButtonComponent } from './game-start-button/game-start-button.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PlayerHealthBarComponent, MonsterHealthBarComponent, PlayerAttackButtonComponent, PlayerSpecialAttackButtonComponent, PlayerHealButtonComponent, PlayerFleeButtonComponent, GameStartButtonComponent],
+  imports: [RouterOutlet, 
+            PlayerHealthBarComponent, 
+            MonsterHealthBarComponent, 
+            PlayerAttackButtonComponent, 
+            PlayerSpecialAttackButtonComponent, 
+            PlayerHealButtonComponent, 
+            PlayerFleeButtonComponent, 
+            
+            GameStartButtonComponent],
   providers: [GameHandlerService, MonsterActionService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
