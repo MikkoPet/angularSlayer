@@ -27,6 +27,7 @@ export class GameHandlerService {
 
   setDifficulty(health : number, minPotency : number, maxPotency : number) {
     this.monster.MonsterHealthMax = health;
+    this.monster.MonsterHealth = health;
     this.monster.MaxPot = maxPotency;
     this.monster.MinPot = minPotency;
   }

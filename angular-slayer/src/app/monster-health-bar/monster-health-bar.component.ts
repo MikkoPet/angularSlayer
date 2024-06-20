@@ -9,5 +9,5 @@ import { MonsterDataService } from '../monster-data.service';
   styleUrl: './monster-health-bar.component.css'
 })
 export class MonsterHealthBarComponent {
-  monster = inject(MonsterDataService)
+  monster = inject(MonsterDataService);
 }

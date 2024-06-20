@@ -1,4 +1,4 @@
 <p> Monster's Health: {{ monster.MonsterHealth }} </p>
 <div class="health-bar">
-    <div [style.width.%]="monster.MonsterHealth" class="health-value"></div>
+    <div [style.width.%]="monster.MonsterHealth * 100 / monster.MonsterHealthMax" class="health-value"></div>
 </div>

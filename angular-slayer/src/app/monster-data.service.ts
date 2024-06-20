@@ -22,7 +22,7 @@ export class MonsterDataService {
   }
 
   set MonsterHealthMax(newMaxHealth : number) {
-    this.monsterHealth = newMaxHealth;
+    this.monsterHealthMax = newMaxHealth;
   }
 
   get MinPot() {
