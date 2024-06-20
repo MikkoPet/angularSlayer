@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { GameHandlerService } from '../game-handler.service';
 import { MonsterActionService } from '../monster-action.service';
+import { GameLogsService } from '../game-logs.service';
 
 @Component({
   selector: 'app-player-attack-button',
@@ -12,6 +13,7 @@ import { MonsterActionService } from '../monster-action.service';
 export class PlayerAttackButtonComponent {
   gameHandlerService = inject(GameHandlerService);
   monsterActionService = inject(MonsterActionService);
+  logs = inject(GameLogsService);
   
   attack() {
     console.log('attack');
@@ -21,6 +23,7 @@ export class PlayerAttackButtonComponent {
     if(this.gameHandlerService.checkMonsterHealth()) {
       return;
     };
+    this.logs.addLog(`You attack the monster for ${potency} damage...`)
     this.monsterActionService.attack();
   }
 }

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { GameLogsService } from './game-logs.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class GameHandlerService {
   private monsterHealthMax : number = 100;
   public gameOff : boolean = true;
   private charges : number = 0;
+
+  gameLogs = inject(GameLogsService);
 
   constructor() { }
 
@@ -60,6 +63,7 @@ export class GameHandlerService {
     this.PlayerHealth = 100;
     this.charges = 0;
     this.monsterHealth = this.MonsterHealthMax;
+    this.gameLogs.resetLog();
   }
 
   checkPlayerHealth() {
