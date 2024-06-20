@@ -45,6 +45,10 @@ export class GameHandlerService {
     this.charges++;
   }
 
+  consumeCharges() {
+    this.charges -= 3;
+  }
+
   
 
   startGame() {
@@ -54,6 +58,7 @@ export class GameHandlerService {
 
   resetGame() {
     this.PlayerHealth = 100;
+    this.charges = 0;
     this.monsterHealth = this.MonsterHealthMax;
   }
 

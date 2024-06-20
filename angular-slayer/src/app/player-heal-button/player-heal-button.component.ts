@@ -15,6 +15,7 @@ export class PlayerHealButtonComponent {
 
   attack() {
     this.gameHandlerService.PlayerHealth = this.gameHandlerService.PlayerHealth + 10;
+    this.gameHandlerService.plusCharge();
     this.monsterActionService.attack();
   }
 }

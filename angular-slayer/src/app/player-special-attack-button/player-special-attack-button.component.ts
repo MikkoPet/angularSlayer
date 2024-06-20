@@ -14,12 +14,11 @@ import { CommonModule } from '@angular/common';
 export class PlayerSpecialAttackButtonComponent {
     gameHandlerService = inject(GameHandlerService);
     monsterActionService = inject(MonsterActionService);
-
-    charges : boolean = this.gameHandlerService.Charges >= 3;
   
     attack() {
       let potency = this.gameHandlerService.defineDamage(10, 20);
       this.gameHandlerService.MonsterHealth = this.gameHandlerService.MonsterHealth - potency;
+      this.gameHandlerService.consumeCharges();
       if(this.gameHandlerService.checkMonsterHealth()) {
         return;
       };
