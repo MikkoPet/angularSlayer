@@ -11,8 +11,8 @@ export class GameHandlerService {
   public gameOff : boolean = true;
 
   gameLogs = inject(GameLogsService);
-  monster = inject(MonsterDataService);
   player = inject(PlayerDataService);
+  monster = inject(MonsterDataService);
 
   constructor() { }
 
