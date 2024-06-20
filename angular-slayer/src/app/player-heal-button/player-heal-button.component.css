@@ -1,5 +1,6 @@
 button {
     background-color: rgb(152, 132, 241);
+    color: rgb(230, 224, 255);
     transition: all 100ms ease-in;
 }
 

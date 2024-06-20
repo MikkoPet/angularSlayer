@@ -11,4 +11,7 @@ button {
     height: 60px;
     width: 200px;
     font-size: 1.7rem;
+    background-color: rgb(241, 213, 247);
+    font-weight: bolder;
+    transition: all 100ms ease-in;
 }
