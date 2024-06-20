@@ -5,13 +5,13 @@ import { NgClass } from '@angular/common';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-player-special-attack-button',
+  selector: 'app-player-special-heal-button',
   standalone: true,
   imports: [NgClass, CommonModule],
-  templateUrl: './player-special-attack-button.component.html',
-  styleUrl: './player-special-attack-button.component.css'
+  templateUrl: './player-special-heal.component.html',
+  styleUrl: './player-special-heal.component.css'
 })
-export class PlayerSpecialAttackButtonComponent {
+export class PlayerSpecialHealComponent {
     gameHandlerService = inject(GameHandlerService);
     monsterActionService = inject(MonsterActionService);
   

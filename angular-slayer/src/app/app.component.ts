@@ -9,6 +9,7 @@ import { PlayerFleeButtonComponent } from './player-flee-button/player-flee-butt
 import { GameHandlerService } from './game-handler.service';
 import { MonsterActionService } from './monster-action.service';
 import { GameStartButtonComponent } from './game-start-button/game-start-button.component';
+import { PlayerSpecialHealComponent } from './player-special-heal/player-special-heal.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ import { GameStartButtonComponent } from './game-start-button/game-start-button.
             PlayerSpecialAttackButtonComponent, 
             PlayerHealButtonComponent, 
             PlayerFleeButtonComponent, 
-            
+            PlayerSpecialHealComponent,
             GameStartButtonComponent],
   providers: [GameHandlerService, MonsterActionService],
   templateUrl: './app.component.html',
