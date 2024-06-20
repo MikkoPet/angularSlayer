@@ -1,10 +1,10 @@
 h1 {
     font-size: 8em;
     font-weight: bolder;
-    text-shadow: 13px 4px 18px rgba(241, 10, 10, 0.17),
-                14px -6px 25px rgba(58, 15, 247, 0.5),
-                -6px -7px 25px rgba(138, 31, 209, 0.32),
-                -12px 9px 25px rgba(255, 140, 8, 0.37);
+    text-shadow: 13px -6px 18px rgba(241, 10, 10, 0.17),
+                14px 4px 25px rgba(58, 15, 247, 0.5),
+                -6px 9px 25px rgba(138, 31, 209, 0.32),
+                -12px -7px 25px rgba(255, 140, 8, 0.37);
     color: rgb(255, 255, 255);
 }
 
