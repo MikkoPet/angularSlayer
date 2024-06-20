@@ -9,6 +9,7 @@ export class GameHandlerService {
   private monsterHealth : number = 100;
   private monsterHealthMax : number = 100;
   public gameOff : boolean = true;
+  private charges : number = 0;
 
   constructor() { }
 
@@ -34,6 +35,14 @@ export class GameHandlerService {
 
   get MonsterHealthMax() {
     return this.monsterHealthMax;
+  }
+
+  get Charges() {
+    return this.charges;
+  }
+
+  plusCharge() {
+    this.charges++;
   }
 
   
