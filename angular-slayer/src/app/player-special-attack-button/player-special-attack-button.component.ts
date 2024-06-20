@@ -4,6 +4,8 @@ import { MonsterActionService } from '../monster-action.service';
 import { NgClass } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { GameLogsService } from '../game-logs.service';
+import { PlayerDataService } from '../player-data.service';
+import { MonsterDataService } from '../monster-data.service';
 
 @Component({
   selector: 'app-player-special-attack-button',
@@ -15,12 +17,14 @@ import { GameLogsService } from '../game-logs.service';
 export class PlayerSpecialAttackButtonComponent {
     gameHandlerService = inject(GameHandlerService);
     monsterActionService = inject(MonsterActionService);
+    player = inject(PlayerDataService);
+    monster = inject(MonsterDataService);
     logs = inject(GameLogsService);
 
     attack() {
       let potency = this.gameHandlerService.defineDamage(10, 20);
-      this.gameHandlerService.MonsterHealth = this.gameHandlerService.MonsterHealth - potency;
-      this.gameHandlerService.consumeCharges();
+      this.monster.MonsterHealth = this.monster.MonsterHealth - potency;
+      this.player.consumeCharges();
       if(this.gameHandlerService.checkMonsterHealth()) {
         return;
       };

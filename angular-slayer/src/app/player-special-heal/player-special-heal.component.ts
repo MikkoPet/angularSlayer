@@ -4,6 +4,7 @@ import { MonsterActionService } from '../monster-action.service';
 import { NgClass } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { GameLogsService } from '../game-logs.service';
+import { PlayerDataService } from '../player-data.service';
 
 @Component({
   selector: 'app-player-special-heal-button',
@@ -15,12 +16,13 @@ import { GameLogsService } from '../game-logs.service';
 export class PlayerSpecialHealComponent {
     gameHandlerService = inject(GameHandlerService);
     monsterActionService = inject(MonsterActionService);
+    player = inject(PlayerDataService);
     logs = inject(GameLogsService);
 
     attack() {
-      this.gameHandlerService.PlayerHealth > 50 ? this.gameHandlerService.PlayerHealth = 100 
-      : this.gameHandlerService.PlayerHealth += 50;
-      this.gameHandlerService.consumeCharges();
+      this.player.PlayerHealth > 50 ? this.player.PlayerHealth = 100 
+      : this.player.PlayerHealth += 50;
+      this.player.consumeCharges();
       this.logs.addLog(`Using all your faith, you heal yourself for 50 health!!`)
       this.monsterActionService.attack();
     }
