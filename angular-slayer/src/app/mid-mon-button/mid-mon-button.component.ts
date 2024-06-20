@@ -13,6 +13,9 @@ export class MidMonButtonComponent {
 
   startGame() {
     this.game.setDifficulty(100, 8, 12);
+    console.log(this.game.beatenAdversary.mid);
+    this.game.beatenAdversary.mid = true;
+    console.log(this.game.beatenAdversary.mid);
     this.game.startGame();
   }
 }

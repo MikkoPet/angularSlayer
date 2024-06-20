@@ -14,6 +14,12 @@ export class GameHandlerService {
   player = inject(PlayerDataService);
   monster = inject(MonsterDataService);
 
+  beatenAdversary = {
+    easy: false,
+    mid: false,
+    hard: false,
+  }
+
   constructor() { }
 
   defineDamage(min : number, max : number){
