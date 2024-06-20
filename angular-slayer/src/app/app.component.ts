@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PlayerHealthBarComponent } from './player-health-bar/player-health-bar.component';
 import { MonsterHealthBarComponent } from './monster-health-bar/monster-health-bar.component';
@@ -28,5 +28,6 @@ import { PlayerSpecialHealComponent } from './player-special-heal/player-special
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  gameHandlerService = inject(GameHandlerService);
   title = 'angular-slayer';
 }
