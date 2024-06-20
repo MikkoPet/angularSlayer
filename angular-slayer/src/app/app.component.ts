@@ -8,10 +8,12 @@ import { PlayerHealButtonComponent } from './player-heal-button/player-heal-butt
 import { PlayerFleeButtonComponent } from './player-flee-button/player-flee-button.component';
 import { GameHandlerService } from './game-handler.service';
 import { MonsterActionService } from './monster-action.service';
-import { GameStartButtonComponent } from './game-start-button/game-start-button.component';
 import { PlayerSpecialHealComponent } from './player-special-heal/player-special-heal.component';
 import { LogDisplayComponent } from './log-display/log-display.component';
 import { PlayerDataService } from './player-data.service';
+import { EasyMonButtonComponent } from './easy-mon-button/easy-mon-button.component';
+import { MidMonButtonComponent } from './mid-mon-button/mid-mon-button.component';
+import { HardMonButtonComponent } from './hard-mon-button/hard-mon-button.component';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +26,9 @@ import { PlayerDataService } from './player-data.service';
             PlayerHealButtonComponent, 
             PlayerFleeButtonComponent, 
             PlayerSpecialHealComponent,
-            GameStartButtonComponent,
+            EasyMonButtonComponent,
+            MidMonButtonComponent,
+            HardMonButtonComponent,
             LogDisplayComponent,
             ],
   providers: [GameHandlerService, MonsterActionService],

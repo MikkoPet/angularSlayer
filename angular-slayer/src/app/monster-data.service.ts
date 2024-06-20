@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class MonsterDataService {
   private monsterHealth : number = 100;
   private monsterHealthMax : number = 100;
+  private minPotency : number = 8;
+  private maxPotency : number = 15;
 
   set MonsterHealth(newMonsterHealth : number) {
     this.monsterHealth = newMonsterHealth;
@@ -21,5 +23,21 @@ export class MonsterDataService {
 
   set MonsterHealthMax(newMaxHealth : number) {
     this.monsterHealth = newMaxHealth;
+  }
+
+  get MinPot() {
+    return this.minPotency;
+  }
+
+  set MinPot(newPot : number) {
+    this.minPotency = newPot;
+  }
+
+  get MaxPot() {
+    return this.maxPotency;
+  }
+
+  set MaxPot(newPot : number) {
+    this.maxPotency = newPot;
   }
 }

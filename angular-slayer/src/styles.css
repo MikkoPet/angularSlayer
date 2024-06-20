@@ -14,3 +14,7 @@ button {
     background-color: rgb(241, 213, 247);
     transition: all 100ms ease-in;
 }
+
+button:hover {
+    background-color: rgb(45, 24, 94);
+}

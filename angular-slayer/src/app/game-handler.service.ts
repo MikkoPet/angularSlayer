@@ -25,6 +25,12 @@ export class GameHandlerService {
     this.resetGame();
   }
 
+  setDifficulty(health : number, minPotency : number, maxPotency : number) {
+    this.monster.MonsterHealthMax = health;
+    this.monster.MaxPot = maxPotency;
+    this.monster.MinPot = minPotency;
+  }
+
   resetGame() {
     this.player.PlayerHealth = 100;
     this.player.resetCharges(0);
