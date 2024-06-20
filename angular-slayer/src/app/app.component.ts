@@ -11,6 +11,7 @@ import { MonsterActionService } from './monster-action.service';
 import { GameStartButtonComponent } from './game-start-button/game-start-button.component';
 import { PlayerSpecialHealComponent } from './player-special-heal/player-special-heal.component';
 import { LogDisplayComponent } from './log-display/log-display.component';
+import { PlayerDataService } from './player-data.service';
 
 @Component({
   selector: 'app-root',
@@ -24,12 +25,14 @@ import { LogDisplayComponent } from './log-display/log-display.component';
             PlayerFleeButtonComponent, 
             PlayerSpecialHealComponent,
             GameStartButtonComponent,
-            LogDisplayComponent],
+            LogDisplayComponent,
+            ],
   providers: [GameHandlerService, MonsterActionService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   gameHandlerService = inject(GameHandlerService);
+  player = inject(PlayerDataService);
   title = 'angular-slayer';
 }
