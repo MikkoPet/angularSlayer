@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { GameLogsService } from '../game-logs.service';
 import { PlayerDataService } from '../player-data.service';
 import { MonsterDataService } from '../monster-data.service';
+import { BossStatsService } from '../boss-stats.service';
 
 @Component({
   selector: 'app-player-special-attack-button',
@@ -20,6 +21,7 @@ export class PlayerSpecialAttackButtonComponent {
     player = inject(PlayerDataService);
     monster = inject(MonsterDataService);
     logs = inject(GameLogsService);
+    boss = inject(BossStatsService);
 
     attack() {
       let potency = this.gameHandlerService.defineDamage(10, 20);
@@ -27,10 +29,17 @@ export class PlayerSpecialAttackButtonComponent {
     let monster = this.gameHandlerService.beatenAdversary[currentMon].name;
       this.monster.MonsterHealth = this.monster.MonsterHealth - potency;
       this.player.consumeCharges();
+      this.logs.addLog(`Using all your might, you attack the ${monster} for ${potency} damage!!!`)
+      if (this.gameHandlerService.activateBoss) {
+        this.boss.attackAmt++;
+        this.boss.eventChecker();
+      }
+
       if(this.gameHandlerService.checkMonsterHealth()) {
         return;
       };
-      this.logs.addLog(`Using all your might, you attack the ${monster} for ${potency} damage!!!`)
+
       this.monsterActionService.attack();
+
     }
 }

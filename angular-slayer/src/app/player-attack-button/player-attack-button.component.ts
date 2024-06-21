@@ -4,6 +4,7 @@ import { MonsterActionService } from '../monster-action.service';
 import { GameLogsService } from '../game-logs.service';
 import { MonsterDataService } from '../monster-data.service';
 import { PlayerDataService } from '../player-data.service';
+import { BossStatsService } from '../boss-stats.service';
 
 @Component({
   selector: 'app-player-attack-button',
@@ -18,6 +19,7 @@ export class PlayerAttackButtonComponent {
   monster = inject(MonsterDataService);
   player = inject(PlayerDataService);
   logs = inject(GameLogsService);
+  boss = inject(BossStatsService);
   
   attack() {
     let potency = this.gameHandlerService.defineDamage(3, 10);
@@ -25,6 +27,10 @@ export class PlayerAttackButtonComponent {
     let monster = this.gameHandlerService.beatenAdversary[currentMon].name;
     this.monster.MonsterHealth = this.monster.MonsterHealth - potency;
     this.player.plusCharge();
+    
+        if (this.gameHandlerService.activateBoss) {
+          this.boss.eventChecker();
+        }
     if(this.gameHandlerService.checkMonsterHealth()) {
       return;
     };

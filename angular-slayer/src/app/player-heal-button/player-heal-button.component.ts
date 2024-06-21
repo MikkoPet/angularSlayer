@@ -3,6 +3,7 @@ import { GameHandlerService } from '../game-handler.service';
 import { MonsterActionService } from '../monster-action.service';
 import { GameLogsService } from '../game-logs.service';
 import { PlayerDataService } from '../player-data.service';
+import { BossStatsService } from '../boss-stats.service';
 
 @Component({
   selector: 'app-player-heal-button',
@@ -16,11 +17,18 @@ export class PlayerHealButtonComponent {
   monsterActionService = inject(MonsterActionService);
   player = inject(PlayerDataService);
   logs = inject(GameLogsService);
+  boss = inject(BossStatsService);
 
   attack() {
     this.player.PlayerHealth = this.player.PlayerHealth + 10;
     this.player.plusCharge();
     this.logs.addLog(`You recuperate 10 health through healing magics...`)
+    
+    if (this.gameHandlerService.activateBoss) {
+      this.boss.healAmt++;
+      this.boss.eventChecker();
+    }
+
     this.monsterActionService.attack();
   }
 }
