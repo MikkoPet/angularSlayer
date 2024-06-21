@@ -103,6 +103,7 @@ export class GameHandlerService {
         this.resetGame();
       } else if (this.deathGauge === 4) {
         alert('Congrats! You won the game!');
+        this.activateBoss = false;
         this.gameOver();
       } else {
       this.gameOver();
