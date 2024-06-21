@@ -30,6 +30,7 @@ export class GameHandlerService {
   ]
 
   currentAdversary : number = NaN;
+  deathGauge : number = 0;
 
   constructor() { }
 
@@ -63,6 +64,8 @@ export class GameHandlerService {
     if (this.player.PlayerHealth <= 0) {
       alert("You've been slain :(")
       this.player.PlayerHealth = 100;
+      this.deathGauge = 0;
+      this.beatenAdversary.forEach((mon) => mon.dead = false);
       this.gameOver()
     }
   }
