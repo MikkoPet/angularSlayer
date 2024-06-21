@@ -36,6 +36,16 @@ export class GameHandlerService {
   deathGauge : number = 0;
   activateBoss: boolean = false;
 
+  bossAppearance(){
+    alert('The depths of the castle rumble...');
+    alert('Thunder hits the ground around you...');
+    alert('"You think you can slay my children in all impunity?"');
+    alert('You turn around to the source of the voice...');
+    alert('Behind you, the Demon Queen has appeared, standing between you and the door...');
+    alert('Her eyes are murderous, her blade unsheathed, her hand glows with magic...')
+    alert('You cannot run anymore...');
+  }
+
   constructor() { }
 
   set Adversary(opponent : number) {
@@ -77,15 +87,18 @@ export class GameHandlerService {
   checkMonsterHealth() {
     if (this.monster.MonsterHealth <= 0) {
       alert("You've slain the monster :)")
+      this.monster.MonsterHealth = 0;
       this.beatenAdversary[this.currentAdversary].dead = true;
       this.deathGauge++;
       if (this.deathGauge === 3){
+        this.bossAppearance();
         this.activateBoss = true;
+        this.setDifficulty(500, 5, 25);
+        this.resetGame();
       } else if (this.deathGauge === 4) {
-        alert('Congrats! You won the game!')
+        alert('Congrats! You won the game!');
       } else {
       this.gameOver();
-      this.monster.MonsterHealth = 0;
       return true;
       }
     }

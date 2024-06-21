@@ -1,1 +1,1 @@
-<button (click)="attack()" [hidden] = gameHandlerService.gameOff >FLEE</button>
+<button (click)="attack()" [hidden] = "gameHandlerService.gameOff || gameHandlerService.activateBoss" >FLEE</button>

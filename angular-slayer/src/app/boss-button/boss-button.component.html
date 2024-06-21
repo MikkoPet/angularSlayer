@@ -1,1 +1,1 @@
-<button [hidden] = "!game.gameOff || game.activateBoss" (click) = "startGame()" >EASY</button>
+<button [style.display] = "!game.gameOff && game.activateBoss ? 'block' : 'none'" (click) = "startGame()" >Fight or Die</button>
