@@ -44,6 +44,7 @@ export class GameHandlerService {
     alert('Behind you, the Demon Queen has appeared, standing between you and the door...');
     alert('Her eyes are murderous, her blade unsheathed, her hand glows with magic...')
     alert('You cannot run anymore...');
+    this.currentAdversary = 3;
   }
 
   constructor() { }
@@ -77,11 +78,16 @@ export class GameHandlerService {
   checkPlayerHealth() {
     if (this.player.PlayerHealth <= 0) {
       alert("You've been slain :(")
-      this.player.PlayerHealth = 100;
-      this.deathGauge = 0;
-      this.beatenAdversary.forEach((mon) => mon.dead = false);
-      this.gameOver()
+      this.playerDeath();
     }
+  }
+  
+  playerDeath(){
+    this.player.PlayerHealth = 100;
+    this.deathGauge = 0;
+    this.beatenAdversary.forEach((mon) => mon.dead = false);
+    this.activateBoss = false;
+    this.gameOver();    
   }
   
   checkMonsterHealth() {
@@ -97,6 +103,7 @@ export class GameHandlerService {
         this.resetGame();
       } else if (this.deathGauge === 4) {
         alert('Congrats! You won the game!');
+        this.gameOver();
       } else {
       this.gameOver();
       return true;
