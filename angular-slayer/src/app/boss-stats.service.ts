@@ -20,19 +20,19 @@ export class BossStatsService {
         console.log('attk more');
         switch (this.healAmt) {
           case 10:
-            for(let dialog in this.dialog.coward1) {
+            for(let dialog of this.dialog.coward1) {
               alert(dialog);
             };
             return;
 
           case 20:
-            for(let dialog in this.dialog.coward2) {
+            for(let dialog of this.dialog.coward2) {
               alert(dialog);
             };
             return;
 
           case 30:
-            for(let dialog in this.dialog.cowardEnd) {
+            for(let dialog of this.dialog.cowardEnd) {
               alert(dialog);
             };
             this.game.playerDeath();
@@ -44,27 +44,27 @@ export class BossStatsService {
       } else if ( this.attackAmt/this.healAmt < 0.5 ) {
         switch(this.healAmt + this.attackAmt) {
           case 20:
-            for(let dialog in this.dialog.fun1) {
+            for(let dialog of this.dialog.fun1) {
               alert(dialog);
             };
             return;
           
           case 40:
-            for(let dialog in this.dialog.fun2) {
+            for(let dialog of this.dialog.fun2) {
               alert(dialog);
             };            
             this.game.monster.MonsterHealth = this.game.monster.MonsterHealthMax;
             return;
 
           case 70:
-            for(let dialog in this.dialog.fun3) {
+            for(let dialog of this.dialog.fun3) {
               alert(dialog);
             };            
             this.game.monster.MonsterHealth += 150;
             return;
 
           case 100:
-            for(let dialog in this.dialog.fun4) {
+            for(let dialog of this.dialog.fun4) {
               alert(dialog);
             };            
             this.game.monster.MaxPot = 25;
@@ -78,7 +78,7 @@ export class BossStatsService {
       }
     } else {
       if ( this.game.monster.MonsterHealth <= 0 ) {
-        for(let dialog in this.dialog.funQueenDeath) {
+        for(let dialog of this.dialog.funQueenDeath) {
           alert(dialog);
         };        
         return;
@@ -86,14 +86,14 @@ export class BossStatsService {
 
       switch(this.banterAmt){
         case 20:
-          for(let dialog in this.dialog.banter1) {
+          for(let dialog of this.dialog.banter1) {
             alert(dialog);
           };
           this.game.monster.MaxPot = 20;
           return;
 
         case 40:
-          for(let dialog in this.dialog.banter2) {
+          for(let dialog of this.dialog.banter2) {
             alert(dialog);
           };
           this.game.monster.MaxPot = 15;
@@ -101,14 +101,14 @@ export class BossStatsService {
           return;
         
         case 50:
-          for(let dialog in this.dialog.banter3) {
+          for(let dialog of this.dialog.banter3) {
             alert(dialog);
           };
           this.game.monster.MinPot = 8;
           return;
         
         case 55:
-          for(let dialog in this.dialog.banter4) {
+          for(let dialog of this.dialog.banter4) {
             alert(dialog);
           };
           this.game.monster.MinPot = 5;
@@ -116,21 +116,21 @@ export class BossStatsService {
           return;
         
         case 60:
-          for(let dialog in this.dialog.banter5) {
+          for(let dialog of this.dialog.banter5) {
             alert(dialog);
           };
           this.game.monster.MinPot = 0;
           return;
 
         case 70:
-          for(let dialog in this.dialog.banter6) {
+          for(let dialog of this.dialog.banter6) {
             alert(dialog);
           };
           this.game.monster.MaxPot = 0;
           return;
 
         case 100:
-          for(let dialog in this.dialog.banterEnd) {
+          for(let dialog of this.dialog.banterEnd) {
             alert(dialog);
           };
           this.game.monster.MonsterHealth = 0;
