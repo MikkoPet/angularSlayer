@@ -21,12 +21,14 @@ export class PlayerAttackButtonComponent {
   
   attack() {
     let potency = this.gameHandlerService.defineDamage(3, 10);
+    let currentMon = this.gameHandlerService.currentAdversary;
+    let monster = this.gameHandlerService.beatenAdversary[currentMon].name;
     this.monster.MonsterHealth = this.monster.MonsterHealth - potency;
     this.player.plusCharge();
     if(this.gameHandlerService.checkMonsterHealth()) {
       return;
     };
-    this.logs.addLog(`You attack the monster for ${potency} damage...`)
+    this.logs.addLog(`You attack the ${monster} for ${potency} damage...`)
     this.monsterActionService.attack();
   }
 }

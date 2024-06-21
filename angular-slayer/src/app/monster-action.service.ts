@@ -15,9 +15,10 @@ export class MonsterActionService {
 
   attack() {
     let currentMon = this.gameHandlerService.currentAdversary;
+    let monster = this.gameHandlerService.beatenAdversary[currentMon].name;
     let potency = this.gameHandlerService.defineDamage(8, 10);
     this.player.PlayerHealth = this.player.PlayerHealth - potency;
-    this.logs.addLog(`The ${this.gameHandlerService.beatenAdversary[currentMon].name} attacks you for ${potency} damage...`)
+    this.logs.addLog(`The ${monster} attacks you for ${potency} damage...`)
     this.gameHandlerService.checkPlayerHealth()
   }
 }
