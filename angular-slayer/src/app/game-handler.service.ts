@@ -93,7 +93,7 @@ export class GameHandlerService {
       if (this.deathGauge === 3){
         this.bossAppearance();
         this.activateBoss = true;
-        this.setDifficulty(500, 5, 25);
+        this.setDifficulty(500, 10, 25);
         this.resetGame();
       } else if (this.deathGauge === 4) {
         alert('Congrats! You won the game!');
