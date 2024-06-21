@@ -18,16 +18,16 @@ export class GameHandlerService {
     name: string;
     dead: boolean;
   } [] = [
-    {name: 'easy',
+    {name: 'Lowly Wolf',
       dead: false, 
     },
-    {name: 'mid',
+    {name: 'Soldier Ghoul',
       dead: false
     },
-    {name: 'hard',
+    {name: 'Demon Captain',
       dead: false
     },
-    {name: 'boss',
+    {name: 'Demon Queen',
       dead: false
     }
   ]
