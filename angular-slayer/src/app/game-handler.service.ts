@@ -26,11 +26,15 @@ export class GameHandlerService {
     },
     {name: 'hard',
       dead: false
+    },
+    {name: 'boss',
+      dead: false
     }
   ]
 
   currentAdversary : number = NaN;
   deathGauge : number = 0;
+  activateBoss: boolean = false;
 
   constructor() { }
 
@@ -74,9 +78,16 @@ export class GameHandlerService {
     if (this.monster.MonsterHealth <= 0) {
       alert("You've slain the monster :)")
       this.beatenAdversary[this.currentAdversary].dead = true;
+      this.deathGauge++;
+      if (this.deathGauge === 3){
+        this.activateBoss = true;
+      } else if (this.deathGauge === 4) {
+        alert('Congrats! You won the game!')
+      } else {
       this.gameOver();
       this.monster.MonsterHealth = 0;
       return true;
+      }
     }
     return false;
   }

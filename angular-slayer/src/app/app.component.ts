@@ -14,6 +14,7 @@ import { PlayerDataService } from './player-data.service';
 import { EasyMonButtonComponent } from './easy-mon-button/easy-mon-button.component';
 import { MidMonButtonComponent } from './mid-mon-button/mid-mon-button.component';
 import { HardMonButtonComponent } from './hard-mon-button/hard-mon-button.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { HardMonButtonComponent } from './hard-mon-button/hard-mon-button.compon
             MidMonButtonComponent,
             HardMonButtonComponent,
             LogDisplayComponent,
+            CommonModule,
             ],
   providers: [GameHandlerService, MonsterActionService],
   templateUrl: './app.component.html',

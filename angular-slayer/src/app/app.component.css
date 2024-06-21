@@ -1,3 +1,30 @@
+main {
+    padding-top: 20vh;
+    height: 100vh;
+}
+
+.bossInterface {
+    background: linear-gradient(rgb(170, 0, 0), rgb(6, 0, 26));
+}
+
+.bossInterface h1 {
+    text-shadow: 13px -6px 18px rgba(241, 10, 10, 0.17),
+                14px 4px 25px rgba(247, 15, 65, 0.5),
+                -6px 9px 25px rgba(230, 7, 7, 0.32),
+                -12px -7px 25px rgba(255, 140, 8, 0.37);
+}
+
+.bossInterface button {
+    background-color: rgb(230, 7, 7);
+    color: white;
+    box-shadow: -12px -7px 25px rgba(255, 140, 8, 0.37),
+                13px -6px 18px rgba(241, 10, 10, 0.17);
+}
+
+.regularInterface {
+    background: linear-gradient(to right, rgb(253, 239, 244), rgb(243, 239, 255));    
+}
+
 h1 {
     font-family: Creepster, sans-serif;
     font-size: 13em;
