@@ -14,13 +14,28 @@ export class GameHandlerService {
   player = inject(PlayerDataService);
   monster = inject(MonsterDataService);
 
-  beatenAdversary = {
-    easy: false,
-    mid: false,
-    hard: false,
-  }
+  beatenAdversary :{
+    name: string;
+    dead: boolean;
+  } [] = [
+    {name: 'easy',
+      dead: false, 
+    },
+    {name: 'mid',
+      dead: false
+    },
+    {name: 'hard',
+      dead: false
+    }
+  ]
+
+  currentAdversary : number = NaN;
 
   constructor() { }
+
+  set Adversary(opponent : number) {
+    this.currentAdversary = opponent;
+  }
 
   defineDamage(min : number, max : number){
     return Math.floor((Math.random() * max) + min);
@@ -39,30 +54,30 @@ export class GameHandlerService {
   }
 
   resetGame() {
-    this.player.PlayerHealth = 100;
     this.player.resetCharges(0);
     this.monster.MonsterHealth = this.monster.MonsterHealthMax;
     this.gameLogs.resetLog();
   }
-
+  
   checkPlayerHealth() {
     if (this.player.PlayerHealth <= 0) {
       alert("You've been slain :(")
-      this.player.PlayerHealth = 0;
+      this.player.PlayerHealth = 100;
       this.gameOver()
     }
   }
-
+  
   checkMonsterHealth() {
     if (this.monster.MonsterHealth <= 0) {
       alert("You've slain the monster :)")
+      this.beatenAdversary[this.currentAdversary].dead = true;
       this.gameOver();
       this.monster.MonsterHealth = 0;
       return true;
     }
     return false;
   }
-
+  
   gameOver() {
     this.gameOff = true;
     return;
