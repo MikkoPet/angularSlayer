@@ -1,1 +1,1 @@
-<button [hidden] = !game.gameOff (click) = "startGame()" >EASY</button>
+<button [hidden] = "!game.gameOff || game.beatenAdversary[0].dead" (click) = "startGame()" >EASY</button>

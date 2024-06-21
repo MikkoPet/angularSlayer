@@ -13,6 +13,7 @@ export class EasyMonButtonComponent {
 
   startGame() {
     this.game.setDifficulty(50, 5, 10);
+    this.game.Adversary = 0;
     this.game.startGame();
   }
 }

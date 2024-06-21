@@ -13,6 +13,7 @@ export class HardMonButtonComponent {
 
   startGame() {
     this.game.setDifficulty(100, 10, 15);
+    this.game.Adversary = 2;
     this.game.startGame();
   }
 }
