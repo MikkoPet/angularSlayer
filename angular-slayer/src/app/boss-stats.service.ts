@@ -17,7 +17,6 @@ export class BossStatsService {
   eventChecker() {
     if(!this.banter) {
       if( (this.attackAmt/this.healAmt) < 0.25 ) {
-        console.log('attk more');
         switch (this.healAmt) {
           case 10:
             for(let dialog of this.dialog.coward1) {
@@ -41,7 +40,7 @@ export class BossStatsService {
           default:
             return;
         }
-      } else if ( this.attackAmt/this.healAmt < 0.5 ) {
+      } else if ( this.attackAmt/this.healAmt < 0.6 ) {
         switch(this.healAmt + this.attackAmt) {
           case 20:
             for(let dialog of this.dialog.fun1) {
