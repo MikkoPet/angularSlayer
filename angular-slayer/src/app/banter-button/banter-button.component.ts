@@ -20,6 +20,7 @@ export class BanterButtonComponent {
   attack() {
     this.logs.addLog('You give the Queen a witty quip.');
     this.boss.banterAmt++;
+    this.game.player.plusCharge();
     if (this.boss.eventChecker()) {
       return;
     }
