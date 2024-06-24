@@ -27,7 +27,9 @@ export class PlayerHealButtonComponent {
     
     if (this.gameHandlerService.activateBoss) {
       this.boss.healAmt++;
-      this.boss.eventChecker();
+      if(this.boss.eventChecker()) {
+        return;
+      };
     }
 
     this.monsterActionService.attack();

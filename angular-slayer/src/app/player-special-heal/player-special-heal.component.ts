@@ -28,7 +28,9 @@ export class PlayerSpecialHealComponent {
       this.logs.addLog(`Using all your faith, you heal yourself for 50 health!!`)
       if (this.gameHandlerService.activateBoss) {
         this.boss.healAmt++;
-        this.boss.eventChecker();
+        if(this.boss.eventChecker()) {
+          return;
+        };
       }
       this.monsterActionService.attack();
       

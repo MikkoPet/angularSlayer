@@ -29,7 +29,9 @@ export class PlayerAttackButtonComponent {
     this.player.plusCharge();
     
         if (this.gameHandlerService.activateBoss) {
-          this.boss.eventChecker();
+          if(this.boss.eventChecker()) {
+            return;
+          };;
         }
     if(this.gameHandlerService.checkMonsterHealth()) {
       return;

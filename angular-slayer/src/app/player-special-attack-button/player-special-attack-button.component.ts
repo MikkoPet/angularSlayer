@@ -32,7 +32,9 @@ export class PlayerSpecialAttackButtonComponent {
       this.logs.addLog(`Using all your might, you attack the ${monster} for ${potency} damage!!!`)
       if (this.gameHandlerService.activateBoss) {
         this.boss.attackAmt++;
-        this.boss.eventChecker();
+        if(this.boss.eventChecker()) {
+          return;
+        };
       }
 
       if(this.gameHandlerService.checkMonsterHealth()) {

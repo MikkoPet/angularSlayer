@@ -36,7 +36,7 @@ export class BossStatsService {
               alert(dialog);
             };
             this.game.playerDeath();
-            return;
+            return true;
 
           default:
             return;
@@ -81,7 +81,7 @@ export class BossStatsService {
         for(let dialog of this.dialog.funQueenDeath) {
           alert(dialog);
         };        
-        return;
+        return true;
       }
 
       switch(this.banterAmt){
@@ -135,7 +135,7 @@ export class BossStatsService {
           };
           this.game.monster.MonsterHealth = 0;
           this.game.gameOver();
-          return;
+          return true;
 
         default:
           return;
