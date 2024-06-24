@@ -6,8 +6,6 @@
 
 Small application that pits a player-knight against various monsters, leading to a boss.
 
-To be added: missing banter button during boss phase.
-
 ---
 
 ### How to play
