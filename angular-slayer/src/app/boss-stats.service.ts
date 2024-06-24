@@ -9,8 +9,8 @@ export class BossStatsService {
   game = inject(GameHandlerService);
   dialog = inject(BossDialogueService);
 
-  healAmt : number = 0;
-  attackAmt : number = 0;
+  healAmt : number = 1;
+  attackAmt : number = 1;
   banter : boolean = false;
   banterAmt : number = 0;
 
