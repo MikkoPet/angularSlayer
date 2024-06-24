@@ -34,6 +34,8 @@ ng serve
 ### Dependencies
 
 Node v20.12.2
+Angular 18.0.4
+Typescript 5.4.5
 
 ## Author
 
