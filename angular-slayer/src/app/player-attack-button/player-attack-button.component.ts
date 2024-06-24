@@ -29,6 +29,7 @@ export class PlayerAttackButtonComponent {
     this.player.plusCharge();
     
         if (this.gameHandlerService.activateBoss) {
+          this.boss.attackAmt++;
           if(this.boss.eventChecker()) {
             return;
           };;
