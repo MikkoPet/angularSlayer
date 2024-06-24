@@ -11,7 +11,7 @@ export class BossStatsService {
 
   healAmt : number = 1;
   attackAmt : number = 0;
-  banter : boolean = false;
+  banter : boolean = true;
   banterAmt : number = 0;
 
   eventChecker() {
@@ -132,8 +132,7 @@ export class BossStatsService {
           for(let dialog of this.dialog.banterEnd) {
             alert(dialog);
           };
-          this.game.monster.MonsterHealth = 0;
-          this.game.gameOver();
+          this.game.gameOff = true;
           return true;
 
         default:

@@ -22,8 +22,14 @@ export class BanterButtonComponent {
     this.boss.banterAmt++;
     this.game.player.plusCharge();
     if (this.boss.eventChecker()) {
-      return;
+      this.game.gameOver();
+      this.game.player.PlayerHealth = 100;
+      return alert('Congrats, you won the game!') ;
     }
+    if (!this.game.gameOff) {
     this.monster.attack()
+    } else {
+      this.logs.addLog('The Queen laughs with you.');
+    }
   }
 }
