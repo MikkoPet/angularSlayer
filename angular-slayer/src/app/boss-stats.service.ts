@@ -10,12 +10,11 @@ export class BossStatsService {
   dialog = inject(BossDialogueService);
 
   healAmt : number = 1;
-  attackAmt : number = 1;
+  attackAmt : number = 0;
   banter : boolean = false;
   banterAmt : number = 0;
 
   eventChecker() {
-    console.log(this.attackAmt/this.healAmt);
     if(!this.banter) {
       if( (this.attackAmt/this.healAmt) < 0.25 ) {
         switch (this.healAmt) {
