@@ -11,7 +11,7 @@ export class BossStatsService {
 
   healAmt : number = 1;
   attackAmt : number = 0;
-  banter : boolean = true;
+  banter : boolean = false;
   banterAmt : number = 0;
 
   eventChecker() {
