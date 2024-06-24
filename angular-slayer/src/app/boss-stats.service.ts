@@ -15,6 +15,7 @@ export class BossStatsService {
   banterAmt : number = 0;
 
   eventChecker() {
+    console.log(this.attackAmt/this.healAmt);
     if(!this.banter) {
       if( (this.attackAmt/this.healAmt) < 0.25 ) {
         switch (this.healAmt) {

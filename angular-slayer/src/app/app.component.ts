@@ -16,6 +16,7 @@ import { MidMonButtonComponent } from './mid-mon-button/mid-mon-button.component
 import { HardMonButtonComponent } from './hard-mon-button/hard-mon-button.component';
 import { CommonModule } from '@angular/common';
 import { BossButtonComponent } from './boss-button/boss-button.component';
+import { BanterButtonComponent } from './banter-button/banter-button.component';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,7 @@ import { BossButtonComponent } from './boss-button/boss-button.component';
             MidMonButtonComponent,
             HardMonButtonComponent,
             BossButtonComponent,
+            BanterButtonComponent,
             LogDisplayComponent,
             CommonModule,
             ],
