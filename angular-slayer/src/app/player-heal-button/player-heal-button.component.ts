@@ -20,7 +20,8 @@ export class PlayerHealButtonComponent {
   boss = inject(BossStatsService);
 
   attack() {
-    this.player.PlayerHealth = this.player.PlayerHealth + 10;
+    this.player.PlayerHealth > 90 ? this.player.PlayerHealth = 100 
+    : this.player.PlayerHealth += 10;
     this.player.plusCharge();
     this.logs.addLog(`You recuperate 10 health through healing magics...`)
     
